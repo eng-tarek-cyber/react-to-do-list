@@ -1,0 +1,216 @@
+@import "./todo-theme.css";
+
+.todo-page {
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color var(--transition-normal);
+}
+
+.todo-container {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: var(--bg-surface);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-surface);
+  transition:
+    background-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.todo-title {
+  text-align: center;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  transition: color var(--transition-normal);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background-color: var(--toggle-bg);
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--toggle-hover);
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.todo-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: 20px 0 25px;
+  transition: background-color var(--transition-normal);
+}
+
+.todo-filters {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--filter-inactive-bg);
+  color: var(--filter-inactive-text);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.filter-btn:hover:not(.filter-btn--active) {
+  transform: translateY(-1px);
+  filter: brightness(0.97);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.filter-btn--active-all {
+  background-color: var(--accent-dark);
+  color: #fff;
+}
+
+.filter-btn--active-completed {
+  background-color: var(--accent-green);
+  color: #fff;
+}
+
+.filter-btn--active-pending {
+  background-color: var(--accent-blue);
+  color: #fff;
+}
+
+.todo-list-section {
+  margin-bottom: 30px;
+}
+
+.todo-empty {
+  text-align: center;
+  color: var(--text-muted);
+  transition: color var(--transition-normal);
+}
+
+.todo-add-row {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-input);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-normal);
+}
+
+.todo-input::placeholder {
+  color: var(--text-muted);
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.todo-add-btn {
+  padding: 0 24px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--accent-blue);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.todo-add-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.todo-add-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.todo-add-btn:disabled {
+  background-color: var(--btn-add-disabled);
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.dialog-title-rtl {
+  text-align: right;
+  font-weight: bold;
+}
+
+.dialog-title-danger {
+  color: var(--btn-delete-text);
+}
+
+.dialog-content-rtl {
+  text-align: right;
+}
+
+.dialog-actions-save {
+  background-color: var(--accent-green) !important;
+}
+
+.dialog-actions-delete {
+  background-color: var(--btn-delete-text) !important;
+}

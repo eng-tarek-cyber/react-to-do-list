@@ -1,0 +1,112 @@
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-surface);
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--task-border);
+  border-right-width: 6px;
+  border-right-style: solid;
+  border-right-color: var(--accent-blue);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .task-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.task-card--completed {
+  border-right-color: var(--accent-green);
+}
+
+.task-card__body {
+  text-align: right;
+  flex: 1;
+  padding-left: 15px;
+}
+
+.task-card__title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--task-title);
+  transition: color var(--transition-fast);
+}
+
+.task-card__title--completed {
+  color: var(--task-completed-title);
+  text-decoration: line-through;
+}
+
+.task-card__details {
+  margin: 0;
+  font-size: 13px;
+  color: var(--task-details);
+  line-height: 1.4;
+  transition: color var(--transition-fast);
+}
+
+.task-card__details--completed {
+  color: var(--task-completed-details);
+}
+
+.task-card__actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.task-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    transform var(--transition-fast),
+    filter var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.task-btn:hover {
+  transform: scale(1.04);
+  filter: brightness(0.95);
+}
+
+.task-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.task-btn--complete {
+  background-color: var(--btn-complete-bg);
+  color: var(--btn-complete-text);
+}
+
+.task-btn--complete-done {
+  background-color: var(--btn-complete-done-bg);
+  color: var(--btn-complete-done-text);
+}
+
+.task-btn--edit {
+  background-color: var(--btn-edit-bg);
+  color: var(--btn-edit-text);
+}
+
+.task-btn--delete {
+  background-color: var(--btn-delete-bg);
+  color: var(--btn-delete-text);
+}

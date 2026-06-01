@@ -1,0 +1,17 @@
+.div1 {
+  margin: 300px 300px;
+  border: 5px solid teal;
+  align-items: center;
+  padding: 25px 15px;
+}
+.To-Do-Container {
+  display: flex;
+  flex-direction: column;
+}
+.To-Do-Container ul li {
+  width: 300px;
+  overflow-wrap: break-word;
+  list-style-type: "👉";
+  padding: 0px 10px;
+  cursor: pointer;
+}
